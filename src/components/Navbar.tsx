@@ -39,9 +39,22 @@ export default function Navbar({ onScrollToSection, onOpenSellForm }: NavbarProp
           >
             <img
               src="/logo.jpg"
-              alt="Land Bourn Real Estate"
-              className="h-12 w-auto rounded transition-all duration-300 group-hover:scale-105 group-hover:-translate-y-0.5"
+              alt="Land Bourn logo"
+              className="h-12 w-auto mr-2 flex-shrink-0 object-contain transition-all duration-300 group-hover:scale-105 group-hover:-translate-y-0.5"
             />
+            <div className="flex flex-col items-start leading-none select-none">
+              <span className="font-sans text-xl tracking-tight uppercase">
+                <span className="font-black text-zinc-900">LAND</span>
+                <span className="font-black text-[#E53935] ml-1">BOURN</span>
+              </span>
+              <div className="flex items-center w-full mt-0.5">
+                <div className="h-[1px] flex-grow bg-zinc-200"></div>
+                <span className="font-sans text-[7px] font-bold tracking-[0.25em] text-zinc-400 uppercase px-1">
+                  REAL ESTATE
+                </span>
+                <div className="h-[1px] flex-grow bg-zinc-200"></div>
+              </div>
+            </div>
           </div>
 
           {/* Desktop Navigation */}

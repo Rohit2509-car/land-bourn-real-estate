@@ -45,11 +45,24 @@ export default function Footer({ onScrollToSection }: FooterProps) {
               className="flex items-center space-x-3 cursor-pointer group"
             >
               <img
-                src="/logo.jpg"
-                alt="Land Bourn Real Estate"
-                className="h-12 w-auto rounded transition-all duration-300 group-hover:scale-105 group-hover:-translate-y-0.5"
-              />
+  src="/logo.jpg"
+  alt="Land Bourn logo"
+  className="h-12 w-auto mr-2 object-contain transition-all duration-300 group-hover:scale-105 group-hover:-translate-y-0.5"
+/>
+            <div className="flex flex-col items-start leading-none select-none">
+              <span className="font-sans text-xl tracking-tight uppercase">
+                <span className="font-black text-zinc-900">LAND</span>
+                <span className="font-black text-[#E53935] ml-1">BOURN</span>
+              </span>
+              <div className="flex items-center w-full mt-0.5">
+                <div className="h-[1px] flex-grow bg-zinc-300"></div>
+                <span className="font-sans text-[7px] font-bold tracking-[0.25em] text-zinc-500 uppercase px-1">
+                  REAL ESTATE
+                </span>
+                <div className="h-[1px] flex-grow bg-zinc-300"></div>
+              </div>
             </div>
+          </div>
 
             <p className="text-xs sm:text-sm text-zinc-500 leading-relaxed">
               Land Bourn is an elite, double-authenticated escrow land registry platform. We bridge the gap between premium raw land investments and secure digital title closure under Swiss-level confidentiality protocols.

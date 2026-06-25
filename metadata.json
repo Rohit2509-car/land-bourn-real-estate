@@ -1,0 +1,6 @@
+{
+  "name": "Aura Lands",
+  "description": "An ultra-premium luxury real estate marketplace designed for browsing, comparing, and transacting high-value verified land assets. Features advanced financial carry calculators and interactive AI-powered investment recommendations.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

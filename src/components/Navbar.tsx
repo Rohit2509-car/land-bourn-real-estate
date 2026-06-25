@@ -33,13 +33,13 @@ export default function Navbar({ onScrollToSection, onOpenSellForm }: NavbarProp
       <header className="sticky top-0 z-50 w-full bg-white">
         <div id="navbar-container" className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-8 relative">
           {/* Logo */}
-          <div 
+          <div
             onClick={() => onScrollToSection("hero")}
             className="flex cursor-pointer items-center space-x-3 group"
           >
-            <img 
-              src="/logo.jpg" 
-              alt="Land Bourn Real Estate" 
+            <img
+              src="/logo.jpg"
+              alt="Land Bourn Real Estate"
               className="h-12 w-auto rounded transition-all duration-300 group-hover:scale-105 group-hover:-translate-y-0.5"
             />
           </div>
@@ -70,7 +70,7 @@ export default function Navbar({ onScrollToSection, onOpenSellForm }: NavbarProp
                 <span className="text-sm font-medium tracking-wider text-[#E53935]">
                   Welcome, {userName}
                 </span>
-                <button 
+                <button
                   onClick={() => setIsLoggedIn(false)}
                   className="text-xs text-zinc-500 hover:text-[#E53935] ml-2 font-bold"
                 >
@@ -137,7 +137,7 @@ export default function Navbar({ onScrollToSection, onOpenSellForm }: NavbarProp
               {isLoggedIn ? (
                 <div className="text-[#E53935] text-sm">
                   Active Broker: <span className="text-zinc-900 font-bold">{userName}</span>
-                  <button 
+                  <button
                     onClick={() => {
                       setIsLoggedIn(false);
                       setIsOpen(false);
@@ -189,21 +189,19 @@ export default function Navbar({ onScrollToSection, onOpenSellForm }: NavbarProp
             <div className="mb-6 flex border-b border-zinc-200">
               <button
                 onClick={() => setLoginTab("login")}
-                className={`w-1/2 pb-3 text-center text-base font-bold tracking-wider ${
-                  loginTab === "login"
+                className={`w-1/2 pb-3 text-center text-base font-bold tracking-wider ${loginTab === "login"
                     ? "border-b-2 border-[#E53935] text-zinc-900"
                     : "text-zinc-500"
-                }`}
+                  }`}
               >
                 Broker Login
               </button>
               <button
                 onClick={() => setLoginTab("register")}
-                className={`w-1/2 pb-3 text-center text-base font-bold tracking-wider ${
-                  loginTab === "register"
+                className={`w-1/2 pb-3 text-center text-base font-bold tracking-wider ${loginTab === "register"
                     ? "border-b-2 border-[#E53935] text-zinc-900"
                     : "text-zinc-500"
-                }`}
+                  }`}
               >
                 Register
               </button>

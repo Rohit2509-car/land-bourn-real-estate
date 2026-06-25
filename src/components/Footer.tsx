@@ -44,38 +44,11 @@ export default function Footer({ onScrollToSection }: FooterProps) {
               onClick={() => onScrollToSection("hero")}
               className="flex items-center space-x-3 cursor-pointer group"
             >
-            <svg 
-              viewBox="0 0 100 45" 
-              className="h-10 w-auto fill-current text-[#E53935] transition-all duration-300 group-hover:scale-105 group-hover:-translate-y-0.5"
-            >
-              {/* Chimney */}
-              <rect x="22" y="24" width="5" height="10" />
-              
-              {/* Left & Right Main House Roof (Thick shape) */}
-              <path d="M 10,38 L 48,18 C 49,17.5 51,17.5 52,18 L 85,35 L 83,38 L 50,21 L 12,40 Z" />
-              
-              {/* Window (4 Separate cutouts) */}
-              <rect x="44" y="26" width="4.5" height="3.5" />
-              <rect x="50.5" y="26" width="4.5" height="3.5" />
-              <rect x="44" y="31" width="4.5" height="3.5" />
-              <rect x="50.5" y="31" width="4.5" height="3.5" />
-              
-              {/* Curvy Behind/Right Roof (Thick solid shape) */}
-              <path d="M 38,24 C 50,15 72,13 90,30 L 92,30 L 92,34 L 88,34 L 88,31 C 72,16.5 52,18.5 40,26 Z" />
-            </svg>
-            <div className="flex flex-col items-start leading-none select-none">
-              <span className="font-sans text-xl tracking-tight uppercase">
-                <span className="font-black text-zinc-900">LAND</span>
-                <span className="font-black text-[#E53935] ml-1">BOURN</span>
-              </span>
-              <div className="flex items-center w-full mt-0.5">
-                <div className="h-[1px] flex-grow bg-zinc-300"></div>
-                <span className="font-sans text-[7px] font-bold tracking-[0.25em] text-zinc-500 uppercase px-1">
-                  REAL ESTATE
-                </span>
-                <div className="h-[1px] flex-grow bg-zinc-300"></div>
-              </div>
-            </div>
+            <img 
+              src="/logo.jpg" 
+              alt="Land Bourn Real Estate" 
+              className="h-12 w-auto rounded transition-all duration-300 group-hover:scale-105 group-hover:-translate-y-0.5"
+            />
           </div>
 
           <p className="text-xs sm:text-sm text-zinc-500 leading-relaxed">

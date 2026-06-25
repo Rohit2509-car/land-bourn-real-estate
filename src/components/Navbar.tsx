@@ -31,7 +31,7 @@ export default function Navbar({ onScrollToSection, onOpenSellForm }: NavbarProp
   return (
     <>
       <header className="sticky top-0 z-50 w-full bg-white">
-        <div id="navbar-container" className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-8">
+        <div id="navbar-container" className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-8 relative">
           {/* Logo */}
           <div 
             onClick={() => onScrollToSection("hero")}
@@ -45,7 +45,7 @@ export default function Navbar({ onScrollToSection, onOpenSellForm }: NavbarProp
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-10">
+          <nav className="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center space-x-10">
             {navLinks.map((link) => {
               const Icon = link.icon;
               return (

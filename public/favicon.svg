@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -23.5 100 100" fill="#E53935">
+  <!-- Chimney -->
+  <rect x="22" y="24" width="5" height="10" />
+  
+  <!-- Left & Right Main House Roof (Thick shape) -->
+  <path d="M 10,38 L 48,18 C 49,17.5 51,17.5 52,18 L 85,35 L 83,38 L 50,21 L 12,40 Z" />
+  
+  <!-- Window (4 Separate cutouts) -->
+  <rect x="44" y="26" width="4.5" height="3.5" />
+  <rect x="50.5" y="26" width="4.5" height="3.5" />
+  <rect x="44" y="31" width="4.5" height="3.5" />
+  <rect x="50.5" y="31" width="4.5" height="3.5" />
+  
+  <!-- Curvy Behind/Right Roof (Thick solid shape) -->
+  <path d="M 38,24 C 50,15 72,13 90,30 L 92,30 L 92,34 L 88,34 L 88,31 C 72,16.5 52,18.5 40,26 Z" />
+</svg>

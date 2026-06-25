@@ -60,11 +60,9 @@ export default function HowItWorks() {
     }
   ];
 
-  const activeSteps = activeTab === "buyers" ? buyerSteps : sellerSteps;
-
   return (
     <section id="how-it-works" className="bg-[#FAFAFA] py-24 px-6 lg:px-8 border-t border-zinc-200">
-      <div className="mx-auto max-w-5xl">
+      <div className="mx-auto max-w-7xl">
         
         {/* Header */}
         <div className="text-center space-y-4 mb-16">
@@ -77,15 +75,15 @@ export default function HowItWorks() {
           <p className="font-sans text-sm text-zinc-600 max-w-xl mx-auto leading-relaxed">
             A simplified, high-security pipeline tailored for seamless raw acreage transfers, engineered from the ground up for elite asset allocators.
           </p>
-
+ 
           {/* Interactive Toggle */}
           <div className="pt-6">
-            <div className="inline-flex rounded-full bg-zinc-100 border border-zinc-200 p-1.5">
+            <div className="inline-flex rounded-full bg-zinc-100 border border-zinc-200 p-1.5 shadow-sm">
               <button
                 onClick={() => setActiveTab("buyers")}
                 className={`rounded-full px-6 py-2.5 text-xs font-bold uppercase tracking-wider transition-all cursor-pointer ${
                   activeTab === "buyers"
-                    ? "bg-[#E53935] text-white shadow-lg shadow-[#E53935]/20"
+                    ? "bg-[#E53935] text-white shadow-md shadow-[#E53935]/20"
                     : "text-zinc-500 hover:text-zinc-900"
                 }`}
               >
@@ -95,7 +93,7 @@ export default function HowItWorks() {
                 onClick={() => setActiveTab("sellers")}
                 className={`rounded-full px-6 py-2.5 text-xs font-bold uppercase tracking-wider transition-all cursor-pointer ${
                   activeTab === "sellers"
-                    ? "bg-[#E53935] text-white shadow-lg shadow-[#E53935]/20"
+                    ? "bg-[#E53935] text-white shadow-md shadow-[#E53935]/20"
                     : "text-zinc-500 hover:text-zinc-900"
                 }`}
               >
@@ -104,49 +102,59 @@ export default function HowItWorks() {
             </div>
           </div>
         </div>
-
-        {/* Infographic horizontal/vertical timeline */}
-        <div className="relative space-y-12 before:absolute before:inset-0 before:left-4 sm:before:left-1/2 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-[#E53935]/20 before:via-[#E53935]/20 before:to-zinc-200">
-          {activeSteps.map((step, idx) => {
-            const Icon = step.icon;
-            const isEven = idx % 2 === 0;
+ 
+        {/* Side-by-side 3D flipping cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-5 pt-4">
+          {buyerSteps.map((step, idx) => {
+            const BuyerIcon = step.icon;
+            const sellerStep = sellerSteps[idx];
+            const SellerIcon = sellerStep.icon;
+            
             return (
               <div 
                 key={idx}
-                className={`relative flex flex-col sm:flex-row items-start sm:items-center ${
-                  isEven ? "sm:flex-row-reverse" : ""
-                }`}
+                className="perspective-1000 w-full h-[290px] cursor-pointer"
+                onClick={() => setActiveTab(activeTab === "buyers" ? "sellers" : "buyers")}
               >
-                {/* Timeline Dot with number */}
-                <div className="absolute left-4 sm:left-1/2 -translate-x-[15px] sm:-translate-x-1/2 z-10 flex h-8.5 w-8.5 items-center justify-center rounded-full bg-white border-2 border-[#E53935] text-xs font-black text-[#E53935]">
-                  {idx + 1}
-                </div>
-
-                {/* Card side */}
-                <div className={`w-full sm:w-[45%] pl-12 sm:pl-0 ${
-                  isEven ? "sm:pr-10 sm:text-right" : "sm:pl-10"
-                }`}>
-                  <div className="group rounded-xl border border-zinc-200 bg-white p-6 transition-all hover:border-[#E53935]/30 shadow-sm">
-                    
-                    {/* Icon container */}
-                    <div className={`mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-[#E53935]/10 border border-[#E53935]/20 text-[#E53935] group-hover:text-[#E53935] transition-colors ${
-                      isEven ? "sm:ml-auto" : ""
-                    }`}>
-                      <Icon className="h-5 w-5" />
+                <div 
+                  className="relative w-full h-full duration-700 preserve-3d transition-transform"
+                  style={{ transform: activeTab === "sellers" ? "rotateY(180deg)" : "rotateY(0deg)" }}
+                >
+                  
+                  {/* Front Side: Buyers */}
+                  <div className="absolute inset-0 w-full h-full backface-hidden rounded-xl border border-zinc-200 bg-white p-5 flex flex-col justify-between shadow-sm hover:border-[#E53935]/40 transition-colors">
+                    <div className="space-y-3">
+                      <div className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-[#E53935]/10 border border-[#E53935]/20 text-[#E53935]">
+                        <BuyerIcon className="h-4.5 w-4.5" />
+                      </div>
+                      <h4 className="font-sans text-xs sm:text-sm font-bold text-zinc-900 leading-snug">
+                        {step.title}
+                      </h4>
+                      <p className="font-sans text-[11px] text-zinc-500 leading-relaxed">
+                        {step.desc}
+                      </p>
                     </div>
-
-                    <h4 className="font-sans text-base font-bold text-zinc-900 mb-2">
-                      {step.title}
-                    </h4>
-
-                    <p className="font-sans text-xs text-zinc-600 leading-relaxed">
-                      {step.desc}
-                    </p>
                   </div>
-                </div>
 
-                {/* Empty side for layout centering */}
-                <div className="hidden sm:block w-[45%]"></div>
+                  {/* Back Side: Sellers */}
+                  <div 
+                    className="absolute inset-0 w-full h-full backface-hidden rounded-xl border border-zinc-200 bg-white p-5 flex flex-col justify-between shadow-sm hover:border-[#E53935]/40 transition-colors"
+                    style={{ transform: "rotateY(180deg)" }}
+                  >
+                    <div className="space-y-3">
+                      <div className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-[#E53935]/10 border border-[#E53935]/20 text-[#E53935]">
+                        <SellerIcon className="h-4.5 w-4.5" />
+                      </div>
+                      <h4 className="font-sans text-xs sm:text-sm font-bold text-zinc-900 leading-snug">
+                        {sellerStep.title}
+                      </h4>
+                      <p className="font-sans text-[11px] text-zinc-500 leading-relaxed">
+                        {sellerStep.desc}
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
               </div>
             );
           })}

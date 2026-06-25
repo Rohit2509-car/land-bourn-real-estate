@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Compass, Menu, X, ShieldCheck, User } from "lucide-react";
+import { Menu, X, ShieldCheck, User, Home, Map, TrendingUp } from "lucide-react";
 
 interface NavbarProps {
   onScrollToSection: (sectionId: string) => void;
@@ -23,41 +23,43 @@ export default function Navbar({ onScrollToSection, onOpenSellForm }: NavbarProp
   };
 
   const navLinks = [
-    { name: "Home", id: "hero" },
-    { name: "Buy Land", id: "buy-land" },
-    { name: "AI Advisory", id: "ai-advisory" },
-    { name: "Interactive Map", id: "interactive-map" },
-    { name: "How It Works", id: "how-it-works" },
-    { name: "Sell Land", id: "sell-land" },
+    { name: "Home", id: "hero", icon: Home, animClass: "animate-hover-bounce" },
+    { name: "Buy Land", id: "buy-land", icon: Map, animClass: "animate-hover-pulse" },
+    { name: "Sell Land", id: "sell-land", icon: TrendingUp, animClass: "animate-hover-wiggle" },
   ];
 
   return (
     <>
-      <header className="sticky top-0 z-50 w-full border-b border-zinc-200 bg-white/90 backdrop-blur-md">
+      <header className="sticky top-0 z-50 w-full bg-white">
         <div id="navbar-container" className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-8">
           {/* Logo */}
           <div 
             onClick={() => onScrollToSection("hero")}
-            className="flex cursor-pointer items-center space-x-2.5 group"
+            className="flex cursor-pointer items-center space-x-3 group"
           >
-            <Compass className="h-8 w-8 text-[#E53935] transition-transform duration-500 group-hover:rotate-180" />
-            <span className="font-sans text-2xl font-black tracking-widest text-zinc-900">
-              AURA<span className="text-[#E53935]">.</span>
-              <span className="text-xs font-light tracking-widest text-[#E53935] block sm:inline sm:ml-2">LANDS</span>
-            </span>
+            <img 
+              src="/logo.jpg" 
+              alt="Land Bourn Real Estate" 
+              className="h-12 w-auto rounded transition-all duration-300 group-hover:scale-105 group-hover:-translate-y-0.5"
+            />
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
-            {navLinks.map((link) => (
-              <button
-                key={link.id}
-                onClick={() => onScrollToSection(link.id)}
-                className="font-sans text-sm font-medium tracking-wide text-zinc-600 transition-colors duration-200 hover:text-[#E53935]"
-              >
-                {link.name}
-              </button>
-            ))}
+          <nav className="hidden md:flex items-center space-x-10">
+            {navLinks.map((link) => {
+              const Icon = link.icon;
+              return (
+                <button
+                  key={link.id}
+                  onClick={() => onScrollToSection(link.id)}
+                  className="relative flex items-center space-x-2 font-sans text-base font-semibold tracking-wide text-zinc-700 hover:text-[#E53935] transition-colors duration-300 py-1.5 cursor-pointer group"
+                >
+                  <Icon className={`h-4.5 w-4.5 text-zinc-400 group-hover:text-[#E53935] transition-colors duration-300 ${link.animClass}`} />
+                  <span>{link.name}</span>
+                  <span className="absolute bottom-0 left-0 w-full h-[2px] bg-[#E53935] scale-x-0 origin-left transition-transform duration-300 ease-out group-hover:scale-x-100" />
+                </button>
+              );
+            })}
           </nav>
 
           {/* Actions */}
@@ -81,9 +83,9 @@ export default function Navbar({ onScrollToSection, onOpenSellForm }: NavbarProp
                   setLoginTab("login");
                   setShowLoginModal(true);
                 }}
-                className="flex items-center space-x-2 font-sans text-sm font-semibold tracking-wide text-zinc-700 hover:text-[#E53935] transition-colors duration-200"
+                className="flex items-center space-x-2 font-sans text-sm font-semibold tracking-wide text-zinc-700 hover:text-[#E53935] transition-colors duration-200 group cursor-pointer"
               >
-                <User className="h-4 w-4" />
+                <User className="h-4 w-4 text-zinc-400 group-hover:text-[#E53935] transition-colors duration-200 animate-hover-pulse" />
                 <span>Broker Login</span>
               </button>
             )}
@@ -100,10 +102,14 @@ export default function Navbar({ onScrollToSection, onOpenSellForm }: NavbarProp
           <div className="flex md:hidden items-center space-x-4">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-zinc-900 hover:text-[#E53935] focus:outline-none"
+              className="text-zinc-900 hover:text-[#E53935] focus:outline-none transition-transform duration-300 hover:scale-110 active:scale-95 cursor-pointer group"
               aria-label="Toggle menu"
             >
-              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              {isOpen ? (
+                <X className="h-6 w-6 transition-transform duration-300 group-hover:rotate-90" />
+              ) : (
+                <Menu className="h-6 w-6 transition-transform duration-300 group-hover:scale-y-75" />
+              )}
             </button>
           </div>
         </div>
@@ -111,18 +117,22 @@ export default function Navbar({ onScrollToSection, onOpenSellForm }: NavbarProp
         {/* Mobile Navigation Drawer */}
         {isOpen && (
           <div className="md:hidden border-t border-zinc-200 bg-white/95 backdrop-blur-lg px-6 py-4 space-y-4">
-            {navLinks.map((link) => (
-              <button
-                key={link.id}
-                onClick={() => {
-                  onScrollToSection(link.id);
-                  setIsOpen(false);
-                }}
-                className="block w-full text-left font-sans text-base font-semibold text-zinc-600 hover:text-[#E53935] py-2"
-              >
-                {link.name}
-              </button>
-            ))}
+            {navLinks.map((link) => {
+              const Icon = link.icon;
+              return (
+                <button
+                  key={link.id}
+                  onClick={() => {
+                    onScrollToSection(link.id);
+                    setIsOpen(false);
+                  }}
+                  className="flex items-center space-x-3 w-full text-left font-sans text-lg font-bold text-zinc-700 hover:text-[#E53935] py-2.5 transition-colors duration-200 group"
+                >
+                  <Icon className={`h-5 w-5 text-zinc-400 group-hover:text-[#E53935] transition-colors duration-200 ${link.animClass}`} />
+                  <span>{link.name}</span>
+                </button>
+              );
+            })}
             <div className="border-t border-zinc-200 pt-4 flex flex-col space-y-3">
               {isLoggedIn ? (
                 <div className="text-[#E53935] text-sm">
@@ -144,9 +154,9 @@ export default function Navbar({ onScrollToSection, onOpenSellForm }: NavbarProp
                     setShowLoginModal(true);
                     setIsOpen(false);
                   }}
-                  className="flex items-center space-x-2 font-sans text-sm font-semibold text-zinc-700 hover:text-[#E53935]"
+                  className="flex items-center space-x-2 font-sans text-sm font-semibold text-zinc-700 hover:text-[#E53935] group cursor-pointer"
                 >
-                  <User className="h-4 w-4" />
+                  <User className="h-4 w-4 text-zinc-400 group-hover:text-[#E53935] transition-colors duration-200 animate-hover-pulse" />
                   <span>Broker Login</span>
                 </button>
               )}
@@ -202,7 +212,7 @@ export default function Navbar({ onScrollToSection, onOpenSellForm }: NavbarProp
             <div className="mb-4 text-center">
               <span className="inline-flex items-center space-x-1.5 rounded-full bg-[#E53935]/10 px-3 py-1 text-xs font-semibold text-[#E53935]">
                 <ShieldCheck className="h-3.5 w-3.5" />
-                <span>Aura Secure Auth Broker Network</span>
+                <span>Land Bourn Secure Auth Broker Network</span>
               </span>
             </div>
 
@@ -214,7 +224,7 @@ export default function Navbar({ onScrollToSection, onOpenSellForm }: NavbarProp
                 <input
                   type="email"
                   required
-                  placeholder="broker@auralands.com"
+                  placeholder="broker@landbourn.com"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   className="w-full rounded-lg border border-zinc-200 bg-zinc-50 px-4 py-3 text-sm text-zinc-900 placeholder-zinc-400 focus:border-[#E53935] focus:outline-none"
@@ -258,7 +268,7 @@ export default function Navbar({ onScrollToSection, onOpenSellForm }: NavbarProp
             </form>
 
             <p className="mt-4 text-center text-xs text-zinc-500">
-              By proceeding, you agree to Aura Lands' strict confidentiality standard and double-authenticated escrow agreements.
+              By proceeding, you agree to Land Bourn's strict confidentiality standard and double-authenticated escrow agreements.
             </p>
           </div>
         </div>

@@ -1,5 +1,5 @@
 import React from "react";
-import { Search, Compass, SlidersHorizontal, Sparkles } from "lucide-react";
+import { Search, Compass, SlidersHorizontal } from "lucide-react";
 import { SearchCriteria } from "../types";
 
 interface HeroProps {
@@ -26,33 +26,13 @@ export default function Hero({ criteria, onCriteriaChange, onSearch, onScrollToS
   return (
     <section 
       id="hero" 
-      className="relative flex min-h-[95vh] items-center justify-center bg-[#FAFAFA] py-20 px-6 lg:px-8 overflow-hidden"
+      className="relative flex min-h-[95vh] items-center justify-center bg-white py-20 px-6 lg:px-8 overflow-hidden"
     >
-      {/* Background Image with Dark & Golden Hue Overlays */}
-      <div className="absolute inset-0 z-0">
-        <img 
-          src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=2000&q=90" 
-          alt="Cinematic Luxury Land" 
-          className="h-full w-full object-cover object-center opacity-25 scale-105 animate-subtle-zoom"
-          referrerPolicy="no-referrer"
-        />
-        {/* Gradients */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#FAFAFA] via-[#FAFAFA]/75 to-transparent"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-[#FAFAFA] via-transparent to-[#FAFAFA]/40"></div>
-        
-        {/* Luxury Gold Ambient Light Spot */}
-        <div className="absolute top-1/4 left-1/3 h-96 w-96 rounded-full bg-[#E53935]/5 blur-[120px] pointer-events-none"></div>
-      </div>
+
 
       <div className="relative z-10 w-full max-w-6xl text-center space-y-10">
         
-        {/* Pre-Header Badge */}
-        <div className="inline-flex items-center space-x-2 rounded-full border border-[#E53935]/30 bg-white/80 px-4 py-1.5 backdrop-blur-md">
-          <Sparkles className="h-4 w-4 text-[#E53935]" />
-          <span className="font-mono text-xs font-semibold tracking-[0.2em] text-[#E53935] uppercase">
-            Curated Wealth & Legacy Assets
-          </span>
-        </div>
+
 
         {/* Cinematic Headline */}
         <div className="space-y-4 max-w-4xl mx-auto">

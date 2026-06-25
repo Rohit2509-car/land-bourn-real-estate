@@ -209,7 +209,7 @@ export default function ComparisonDrawer({
                       {prop.verified ? (
                         <span className="text-green-600 font-bold flex items-center space-x-1">
                           <Check className="h-4 w-4" />
-                          <span>100% Aura Audited</span>
+                          <span>100% Land Bourn Audited</span>
                         </span>
                       ) : (
                         <span className="text-amber-600 text-xs font-semibold">Pending Escrow Desk Review</span>

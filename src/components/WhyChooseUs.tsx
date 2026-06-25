@@ -46,10 +46,10 @@ export default function WhyChooseUs() {
         {/* Section Header */}
         <div className="text-center space-y-4 max-w-2xl mx-auto mb-16">
           <span className="font-mono text-xs font-semibold tracking-[0.2em] text-[#E53935] uppercase block">
-            AURA QUALITY COMMITMENT
+            LAND BOURN QUALITY COMMITMENT
           </span>
           <h2 className="font-sans text-3xl font-extrabold tracking-tight text-zinc-900 sm:text-4xl">
-            Why Capital Allocators Choose Aura
+            Why Capital Allocators Choose Land Bourn
           </h2>
           <p className="font-sans text-sm text-zinc-600 leading-relaxed">
             We merge luxury estate curation with state-of-the-art fintech escrow, making high-value land acquisition clear, secure, and highly liquid.

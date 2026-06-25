@@ -213,7 +213,7 @@ export default function MortgageCalculator({ initialPrice }: MortgageCalculatorP
           <div className="flex items-start space-x-2 rounded border border-[#E53935]/10 bg-[#E53935]/5 p-2.5 text-[10px] text-[#E53935]">
             <ShieldAlert className="h-3.5 w-3.5 flex-shrink-0" />
             <span>
-              Disclaimer: Financing terms are subject to local underwriting audits. Aura assists in arranging elite syndications.
+              Disclaimer: Financing terms are subject to local underwriting audits. Land Bourn assists in arranging elite syndications.
             </span>
           </div>
 

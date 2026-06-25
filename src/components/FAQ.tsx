@@ -22,7 +22,7 @@ export default function FAQ() {
             Frequently Answered Inquiries
           </h2>
           <p className="font-sans text-sm text-zinc-600 max-w-lg mx-auto leading-relaxed">
-            Unraveling legalities, Escrow guidelines, and how Aura maintains absolute safety across high-value luxury real estate placements.
+            Unraveling legalities, Escrow guidelines, and how Land Bourn maintains absolute safety across high-value luxury real estate placements.
           </p>
         </div>
 

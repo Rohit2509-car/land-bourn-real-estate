@@ -132,12 +132,7 @@ export default function PropertyGrid({
         {/* Section Header */}
         <div className="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div className="space-y-3">
-            <span className="font-mono text-xs font-semibold tracking-[0.2em] text-[#E53935] uppercase block">
-              ACQUISITIONS AND PLACEMENTS
-            </span>
-            <h2 className="font-sans text-3xl font-extrabold tracking-tight text-zinc-900 sm:text-4xl">
-              Featured Land Portfolios
-            </h2>
+
             <p className="font-sans text-zinc-600 max-w-xl text-sm leading-relaxed">
               Exquisite, pre-screened raw acreage curated for immediate legacy architectural development, commercial zoning, or premium agricultural enterprises.
             </p>
@@ -228,7 +223,7 @@ export default function PropertyGrid({
                     {prop.verified && (
                       <div className="absolute left-4 top-4 flex items-center space-x-1 rounded-full bg-white/95 border border-[#E53935]/40 px-3 py-1 text-[10px] font-bold tracking-wider text-[#E53935] uppercase shadow-sm">
                         <ShieldCheck className="h-3.5 w-3.5" />
-                        <span>Aura Audited</span>
+                        <span>Land Bourn Audited</span>
                       </div>
                     )}
 
@@ -360,7 +355,7 @@ export default function PropertyGrid({
                     {selectedProperty.verified && (
                       <span className="text-green-600 font-semibold flex items-center space-x-0.5 text-xs bg-green-500/10 px-2 py-0.5 rounded ml-2">
                         <Check className="h-3 w-3" />
-                        <span>Aura Audited</span>
+                        <span>Land Bourn Audited</span>
                       </span>
                     )}
                   </div>
@@ -472,7 +467,7 @@ export default function PropertyGrid({
                         <span>Deed Escrow Lead Registered</span>
                       </span>
                       <p className="text-xs text-zinc-600">
-                        Your verification inquiry has been saved in our local persistence ledger. An Aura Concierge Private Broker will contact you at <span className="text-zinc-900 font-semibold">{inquiryEmail}</span> within 24 hours.
+                        Your verification inquiry has been saved in our local persistence ledger. A Land Bourn Concierge Private Broker will contact you at <span className="text-zinc-900 font-semibold">{inquiryEmail}</span> within 24 hours.
                       </p>
 
                       {/* AI Broker Advisory Note Results */}

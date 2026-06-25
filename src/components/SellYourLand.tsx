@@ -144,7 +144,7 @@ export default function SellYourLand({ onAddProperty, onScrollToSection }: SellY
               {consultationSuccess ? (
                 <div className="rounded border border-green-500/20 bg-green-50 p-3.5 text-xs text-green-700 font-semibold flex items-center space-x-2">
                   <Check className="h-4 w-4" />
-                  <span>Success! An Aura Managing Director will call you shortly.</span>
+                  <span>Success! A Land Bourn Managing Director will call you shortly.</span>
                 </div>
               ) : (
                 <div className="flex flex-col sm:flex-row gap-2">

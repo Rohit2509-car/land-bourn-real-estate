@@ -8,7 +8,6 @@ import InteractiveMap from "./components/InteractiveMap";
 import Testimonials from "./components/Testimonials";
 import SellYourLand from "./components/SellYourLand";
 import FAQ from "./components/FAQ";
-import AiAssistant from "./components/AiAssistant";
 import Footer from "./components/Footer";
 import ComparisonDrawer from "./components/ComparisonDrawer";
 import { INITIAL_PROPERTIES } from "./data";
@@ -167,23 +166,6 @@ export default function App() {
         onScrollToSection={handleScrollToSection}
       />
 
-      {/* Why Choose Us Features Ledger */}
-      <WhyChooseUs />
-
-      {/* Dynamic AI Advisor Section (Handshakes with Express server API) */}
-      <AiAssistant />
-
-      {/* Interactive Global Deed Plot Map */}
-      <InteractiveMap 
-        properties={properties}
-        onSelectProperty={(prop: Property) => {
-          // Open details modal programmatically via our callback ref
-          if (viewDetailsCallbackRef.current) {
-            viewDetailsCallbackRef.current(prop);
-          }
-        }}
-      />
-
       {/* Advanced Filtered Property Acquisitions Grid */}
       <PropertyGrid 
         properties={properties}
@@ -196,6 +178,21 @@ export default function App() {
         }}
         savedList={savedList}
         onToggleSave={handleToggleSave}
+      />
+
+      {/* Why Choose Us Features Ledger */}
+      <WhyChooseUs />
+
+
+      {/* Interactive Global Deed Plot Map */}
+      <InteractiveMap 
+        properties={properties}
+        onSelectProperty={(prop: Property) => {
+          // Open details modal programmatically via our callback ref
+          if (viewDetailsCallbackRef.current) {
+            viewDetailsCallbackRef.current(prop);
+          }
+        }}
       />
 
       {/* Escrow Timeline Process Protocol */}
@@ -214,48 +211,24 @@ export default function App() {
       <FAQ />
 
       {/* Final Conversion CTA Banner */}
-      <section className="relative bg-[#121212] py-28 px-6 lg:px-8 border-t border-[#333333]/30 overflow-hidden text-center">
-        <div className="absolute inset-0 z-0">
-          <img 
-            src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1600&q=80" 
-            alt="Alpine Peaks" 
-            className="h-full w-full object-cover object-center opacity-10"
-            referrerPolicy="no-referrer"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#121212] via-[#121212]/90 to-[#121212]"></div>
-        </div>
-
+      <section className="relative bg-[#E53935] py-28 px-6 lg:px-8 overflow-hidden text-center">
         <div className="relative z-10 max-w-4xl mx-auto space-y-8">
-          <div className="inline-flex items-center space-x-1.5 rounded-full border border-[#E53935]/30 bg-[#121212]/85 px-4 py-1">
-            <Sparkles className="h-3.5 w-3.5 text-[#E53935]" />
-            <span className="font-mono text-[10px] font-semibold tracking-widest text-[#E53935] uppercase">
-              DEED ESCROW SYNDICATIONS
-            </span>
-          </div>
 
           <h2 className="font-sans text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">
             Start Your Land Investment <br />
-            <span className="bg-gradient-to-r from-[#FAFAFA] via-[#E53935] to-[#E53935] bg-clip-text text-transparent">
-              Journey Today
-            </span>
+            Journey Today
           </h2>
 
-          <p className="font-sans text-sm sm:text-base text-[#B8B8B8] max-w-xl mx-auto leading-relaxed">
-            Formulate secure portfolios, leverage active zoning classifications, and acquire vetted global real estate deeds securely on Aura Lands.
+          <p className="font-sans text-sm sm:text-base text-white/90 max-w-xl mx-auto leading-relaxed">
+            Formulate secure portfolios, leverage active zoning classifications, and acquire vetted global real estate deeds securely on Land Bourn.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+          <div className="flex justify-center pt-4">
             <button
               onClick={() => handleScrollToSection("buy-land")}
-              className="rounded-md bg-[#E53935] px-8 py-4 text-sm font-bold tracking-widest text-white uppercase hover:bg-[#D32F2F] shadow-lg transition-transform hover:scale-105"
+              className="rounded-md bg-white px-10 py-4 text-sm font-bold tracking-widest text-[#E53935] uppercase hover:bg-zinc-100 shadow-xl transition-all hover:scale-105 active:scale-95"
             >
               Explore Active Ledger
-            </button>
-            <button
-              onClick={() => handleScrollToSection("ai-advisory")}
-              className="rounded-md border border-[#E53935] text-[#E53935] px-8 py-4 text-sm font-bold tracking-widest uppercase hover:bg-[#E53935] hover:text-white transition-colors"
-            >
-              Consult AI Advisor
             </button>
           </div>
         </div>

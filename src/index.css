@@ -50,3 +50,61 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #E53935;
 }
+
+/* 3D Card Flip CSS Utilities */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden; /* webkit prefix for Safari support */
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+/* Micro-animations for Navbar Icons on Hover */
+@keyframes icon-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+@keyframes icon-wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-10deg); }
+  75% { transform: rotate(10deg); }
+}
+
+@keyframes icon-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.18); }
+}
+
+.group:hover .animate-hover-bounce {
+  animation: icon-bounce 0.6s ease-in-out infinite;
+}
+
+.group:hover .animate-hover-wiggle {
+  animation: icon-wiggle 0.5s ease-in-out infinite;
+}
+
+.group:hover .animate-hover-pulse {
+  animation: icon-pulse 0.8s ease-in-out infinite;
+}
+
+@keyframes icon-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.group:hover .animate-hover-spin {
+  animation: icon-spin 1.5s linear infinite;
+}
+
+

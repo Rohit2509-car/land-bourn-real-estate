@@ -115,9 +115,6 @@ export default function AiAssistant() {
         
         {/* Header */}
         <div className="text-center space-y-4 mb-16">
-          <span className="font-mono text-xs font-semibold tracking-[0.2em] text-[#E53935] uppercase block">
-            AI PORTFOLIO ANALYSIS
-          </span>
           <h2 className="font-sans text-3xl font-extrabold tracking-tight text-zinc-900 sm:text-4xl flex items-center justify-center space-x-2">
             <Sparkles className="h-7 w-7 text-[#E53935] animate-pulse" />
             <span>Aura AI Investment Advisory</span>

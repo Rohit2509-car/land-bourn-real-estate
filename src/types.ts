@@ -3,7 +3,7 @@ export interface Property {
   title: string;
   price: number;
   location: string;
-  region: "West Coast" | "Mountain West" | "Tropical" | "European" | "East Coast";
+  region: "Western India" | "Northern India" | "Southern India" | "Eastern India" | "Central India";
   acres: number;
   pricePerAcres: number;
   category: "Residential" | "Commercial" | "Agricultural" | "Legacy Estate" | "Viticulture";
